@@ -15,6 +15,7 @@ cd posos_challenge
 make train
 make api
 ```
+> It will create a folder called `models` which contains the trained model and vectorizer from the first docker. You will also see the untar decrypted data in the `data` folder.
 
 * Try the microservice with any query you want
 ```
