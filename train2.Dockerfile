@@ -1,11 +1,8 @@
 FROM python:3.6-stretch
 
-# Use the passphrase
-ARG password
-
 # install build utilities
 RUN apt-get update && \
-	apt-get install -y gcc make apt-transport-https ca-certificates build-essential gnupg
+	apt-get install -y gcc make apt-transport-https ca-certificates build-essential
 
 # check our python environment
 RUN python3 --version
@@ -13,7 +10,7 @@ RUN pip3 --version
 
 # set the working directory for containers
 WORKDIR  /usr/src/train_model
-
+# WORKDIR /app
 
 
 # Installing python dependencies

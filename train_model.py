@@ -9,7 +9,7 @@ from sklearn import svm
 from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import confusion_matrix
 
-from joblib import dump, load
+from joblib import dump
 
 volume_path = "/app"
 in_train_path = os.path.join(volume_path, 'data/input_train.csv')
@@ -28,7 +28,7 @@ vectorizer = TfidfVectorizer()
 X_train_v = vectorizer.fit_transform(X_train["question"])
 
 # classifier
-clf = svm.SVC(gamma='scale')
+clf = svm.SVC(gamma='scale', probability=True)
 clf.fit(X_train_v, y_train['intention'].to_numpy())
 
 print("Done training!")
@@ -54,4 +54,6 @@ y_val_pred = clf.predict(X_val_v)
 export_path = os.path.join(volume_path, "model_svm")
 print('Exporting trained model to', export_path)
 dump(clf, export_path)
+export_path = os.path.join(volume_path, "vectorizer")
+dump(vectorizer, export_path)
 print("Done exporting!")
