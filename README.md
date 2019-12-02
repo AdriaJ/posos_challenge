@@ -1,10 +1,24 @@
 # posos_challenge
-Application project for Posos
+Application project for Posos - see https://github.com/VincentMatthys/posos_sample
+
+## How to use this repo ?
+
+* Clone the files and set the repo as the current working directory.
+```
+git clone https://github.com/AdriaJ/posos_challenge.git
+cd posos_challenge
+```
+
+* Train the model and run the api (*You must know the passphrase to decrypt the data.*)
+
+```
+make train
+make api
+```
+
+* Try the microservice with any query you want
+```
+curl -G "http://localhost:4002/intent" --data-urlencode "query=risques poisson cru pendant la grossesse ?" | jq
+```
 
 
-To train and export a model run
-`make train`
-
-You must have in your current directory all the files from this GitHub (and a folder called "Data". The data must have the relative path "data/input_train.csv" and "data/output_train.csv" -> No longer needed).
-
-You should also know the passphrase to decrypt the data.
