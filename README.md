@@ -3,9 +3,9 @@ Application project for Posos - see https://github.com/VincentMatthys/posos_samp
 
 ## How to use this repo ?
 
-__Prerequisite__
-Build and tested to run under unix-like system.
-You should be able to run docker without being rooot user (without `sudo`)
+__Prerequisite__  
+Build and tested to run under unix-like system.  
+You should be able to run docker without being root user (without `sudo`).
 
 __What to do?__
 
